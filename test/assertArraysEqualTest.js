@@ -1,3 +1,5 @@
+// refactored with Jason Park @zeipar
+
 const eqArrays = require("../assertArraysEqual");
 const assertEqual = require("../assertEqual");
 

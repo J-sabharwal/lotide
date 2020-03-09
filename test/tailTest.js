@@ -1,3 +1,5 @@
+// refactored with Jason Park @zeipar
+
 const assertEqual = require("../assertEqual");
 const tail = require("../tail");
 
@@ -11,7 +13,6 @@ assertEqual(words.length, 3);
 
 // const result = tail([1, 5, 12]);
 // assertEqual(result, [5, 12]);
-
 
 // const result = tail(["Hello", "Lighthouse", "Labs"]);
 // assertEqual(result, ["Lighthouse", "Labs"]);
