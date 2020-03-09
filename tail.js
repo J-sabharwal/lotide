@@ -1,42 +1,29 @@
-const assertEqual = function(actual, expected) {
-  let isTrue = true;
-  for (let i = 0; i < expected.length; i++) {
-    if (actual[i] === expected[i]) {
-      isTrue = true;
-    } else {
-      isTrue = false;
-    }
-  }
+// const assertEqual = function(actual, expected) {
+//   let isTrue = true;
+//   for (let i = 0; i < expected.length; i++) {
+//     if (actual[i] === expected[i]) {
+//       isTrue = true;
+//     } else {
+//       isTrue = false;
+//     }
+//   }
 
-  if (isTrue) {
-    console.log(`✅ Assertion Passed: ${[actual]} === ${[expected]}`);
-  } else {
-    console.log(`🛑 Assertion Failed: ${[actual]} !== ${[expected]}`);
-  }
-};
+  // if (isTrue) {
+  //   console.log(`✅ Assertion Passed: ${[actual]} === ${[expected]}`);
+  // } else {
+  //   console.log(`🛑 Assertion Failed: ${[actual]} !== ${[expected]}`);
+  // }
+//};
+
+const assertEqual = require("./assertEqual");
+
 const tail = function(arr) {
-  let newArr = [];
-  for (let i = 1; i < arr.length; i++) {
-    newArr.push(arr[i]);
+  let newArr = arr.slice(1).join()
+  for (let i = 0; i < newArr.length; i++) {
+    
   }
-  return newArr;
+  
+  return newArr.toString();
 };
 
-const result = tail(["Hello", "Lighthouse", "Labs"]);
-assertEqual(result, ["Lighthouse", "Labs"]);
-
-const words = ["Yo Yo", "Lighthouse", "Labs"];
-tail(words); // no need to capture the return value since we are not checking it
-assertEqual(words.length, 3);
-
-// const result = tail([1, 5, 12]);
-// assertEqual(result, [5, 12]);
-
-
-// const result = tail(["Hello", "Lighthouse", "Labs"]);
-// assertEqual(result, ["Lighthouse", "Labs"]);
-// assertEqual("Lighthouse Labs", "Bootcamp");
-// assertEqual(1, 1);
-// assertEqual("Tiny", "tiny");
-// assertEqual("Hello", "Hello");
-// assertEqual(5, 12);
+module.exports = tail;
