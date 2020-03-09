@@ -15,13 +15,10 @@
   // }
 //};
 
-const assertEqual = require("./assertEqual");
+const assertEqual = require("./test/helper/assertEqual");
 
 const tail = function(arr) {
   let newArr = arr.slice(1).join()
-  for (let i = 0; i < newArr.length; i++) {
-    
-  }
   
   return newArr.toString();
 };

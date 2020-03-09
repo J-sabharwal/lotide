@@ -1,6 +1,6 @@
 // refactored with Jason Park @zeipar
 
-const assertEqual = require("../assertEqual");
+const assertEqual = require("./helper/assertEqual");
 const tail = require("../tail");
 
 
