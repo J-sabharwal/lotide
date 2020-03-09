@@ -1,7 +1,7 @@
 // refactored with Jason Park @zeipar
 
-const eqArrays = require("../assertArraysEqual");
-const assertEqual = require("../assertEqual");
+const eqArrays = require("./helper/assertArraysEqual");
+const assertEqual = require("./helper/assertEqual");
 
 
 assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true);
