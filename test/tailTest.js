@@ -2,6 +2,20 @@
 
 const assertEqual = require("./helper/assertEqual");
 const tail = require("../tail");
+const assert = require("chai").assert;
+
+describe("tailtest", () => {
+
+  it('should return ["Lighthouse", "Labs"] from ["Hello", "Lighthouse", "Labs"]', () => {
+    assert.deepEqual(result, ["Lighthouse", "Labs"].join());
+  });
+
+  it('should return 3 from ["Hello", "Lighthouse", "Labs"]', () => {
+    assert(words.length, 3);
+  });
+});
+
+
 
 
 const result = tail(["Hello", "Lighthouse", "Labs"]);

@@ -21,7 +21,7 @@ const middle = function(array) {
   switch (array.length) {
   case 1:
   case 2:
-    return [];
+    return array;
   default:
     if (array.length % 2 === 0) {
       newArr.push(array[divArray - 1], array[divArray]);
@@ -32,14 +32,16 @@ const middle = function(array) {
   return newArr;
 };
 
-assertEqual(middle([1, 2, 3, 4]), [2]);
-assertEqual(middle([4, 5, 6, 10]), [5, 6]);
-assertEqual(middle([2, 3]), [3]);
-assertEqual(middle([1, 2, 3, 4, 5, 6, 7]), [4]);
-assertEqual(middle(["1", "2", "3", "4"]), ["3"]);
+// assertEqual(middle([1, 2, 3, 4]), [2]);
+// assertEqual(middle([4, 5, 6, 10]), [5, 6]);
+// assertEqual(middle([2, 3]), [3]);
+// assertEqual(middle([1, 2, 3, 4, 5, 6, 7]), [4]);
+// assertEqual(middle(["1", "2", "3", "4"]), ["3"]);
 
 //assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true);
 // assertEqual(eqArrays([1, 2, 3], [3, 2, 1]), false);
 
 // assertEqual(eqArrays(["1", "2", "3"], ["1", "2", "3"]), true);
 // assertEqual(eqArrays(["1", "2", "3"], ["1", "2", 3]), false);
+
+module.exports = middle;
