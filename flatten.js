@@ -1,19 +1,22 @@
-const assertEqual = function(actual, expected) {
-  if (eqArrays(actual, expected)) {
-    console.log(`✅ Assertion Passed: ${[actual]} === ${[expected]}`);
-  } else {
-    console.log(`🛑 Assertion Failed: ${[actual]} !== ${[expected]}`);
-  }
-};
+const eqArrays = require('./eqArrays');
+const assertArraysEqual = require('./test/helper/assertArraysEqual');
 
-const eqArrays = function(array1, array2) {
-  for (let i = 0; i < array1.length; i++) {
-    if (array1[i] !== array2[i]) {
-      return false;
-    }
-  }
-  return true;
-};
+// const assertEqual = function(actual, expected) {
+//   if (eqArrays(actual, expected)) {
+//     console.log(`✅ Assertion Passed: ${[actual]} === ${[expected]}`);
+//   } else {
+//     console.log(`🛑 Assertion Failed: ${[actual]} !== ${[expected]}`);
+//   }
+// };
+
+// const eqArrays = function(array1, array2) {
+//   for (let i = 0; i < array1.length; i++) {
+//     if (array1[i] !== array2[i]) {
+//       return false;
+//     }
+//   }
+//   return true;
+// };
 
 const flatten = function(nestedArr) {
   let newArr = [];
@@ -32,8 +35,9 @@ const flatten = function(nestedArr) {
   return newArr;
 };
 
+module.exports = flatten;
 
-assertEqual(flatten([1, 2, [3, 4], 5, [6]]), [1, 2, 3, 4, 5, 6]);
-assertEqual(flatten([1, 2, ["3", 4], "5", [6]]), [1, 2, "3", 4, 5, 6]);
-assertEqual(flatten([1, 2, [3, 4], "5", [6]]), [1, 2, 3, 4, "5", 6]);
-assertEqual(flatten([0, 2, [3, 4], 5, [6]]), [1, 2, 3, 4, 5, 6]);
+assertArraysEqual(flatten([1, 2, [3, 4], 5, [6]]), [1, 2, 3, 4, 5, 6]);
+//assertArraysEqual(flatten([1, 2, ["3", 4], "5", [6]]), [1, 2, "3", 4, 5, 6]);
+//assertArraysEqual(flatten([1, 2, [3, 4], "5", [6]]), [1, 2, 3, 4, "5", 6]);
+//assertArraysEqual(flatten([0, 2, [3, 4], 5, [6]]), [1, 2, 3, 4, 5, 6]);

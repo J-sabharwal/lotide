@@ -1,10 +1,13 @@
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`✅ Assertion Passed: ${[actual]} === ${[expected]}`);
-  } else {
-    console.log(`🛑 Assertion Failed: ${[actual]} !== ${[expected]}`);
-  }
-};
+const eqArrays = require('./eqArrays');
+const assertEqual = require('./test/helper/assertEqual');
+
+// const assertEqual = function(actual, expected) {
+//   if (actual === expected) {
+//     console.log(`✅ Assertion Passed: ${[actual]} === ${[expected]}`);
+//   } else {
+//     console.log(`🛑 Assertion Failed: ${[actual]} !== ${[expected]}`);
+//   }
+// };
 
 const findKey = function(object, callback) {
   const newArray = Object.keys(object);
@@ -30,3 +33,5 @@ const names = {
 const firstTrue = findKey(names, elem => elem.kids === 5);
 
 assertEqual(firstTrue, "Remi");
+
+module.exports = findKey;

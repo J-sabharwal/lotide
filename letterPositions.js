@@ -1,19 +1,22 @@
-const assertEqual = function(actual, expected) {
-  if (eqArrays(actual, expected)) {
-    console.log(`✅ Assertion Passed: ${[actual]} === ${[expected]}`);
-  } else {
-    console.log(`🛑 Assertion Failed: ${[actual]} !== ${[expected]}`);
-  }
-};
+const eqArrays = require('./eqArrays');
+const assertArraysEqual = require('./test/helper/assertArraysEqual');
 
-const eqArrays = function(array1, array2) {
-  for (let i = 0; i < array1.length; i++) {
-    if (array1[i] !== array2[i]) {
-      return false;
-    }
-  }
-  return true;
-};
+// const assertEqual = function(actual, expected) {
+//   if (eqArrays(actual, expected)) {
+//     console.log(`✅ Assertion Passed: ${[actual]} === ${[expected]}`);
+//   } else {
+//     console.log(`🛑 Assertion Failed: ${[actual]} !== ${[expected]}`);
+//   }
+// };
+
+// const eqArrays = function(array1, array2) {
+//   for (let i = 0; i < array1.length; i++) {
+//     if (array1[i] !== array2[i]) {
+//       return false;
+//     }
+//   }
+//   return true;
+// };
 
 const letterPositions = function(sentence) {
   const results = {};
@@ -33,6 +36,9 @@ const letterPositions = function(sentence) {
 
   return results;
 };
+module.exports = letterPositions;
 
 // Check the string index against a index number, using the character you want to check
-assertEqual(letterPositions("hello").h, [0]);
+assertArraysEqual(letterPositions("hello").h, [0]);
+
+module.exports = letterPositions;
